@@ -8,9 +8,10 @@
 	},
 	"scripts": {
 		"install": "concurrently \"cd server && npm install\" \"cd client && npm install\"",
+		"build": "cd client && npm run build",
 		"start:server": "cd server && npm start",
 		"start:client": "cd client && npm start",
-		"start": "concurrently \"npm run start:server\" \"npm run start:client\"",
+		"start": "npm run build && concurrently \"npm run start:server\" \"npm run start:client\"",
 		"lint": "eslint .",
 		"lint:fix": "eslint . --fix"
 	},
