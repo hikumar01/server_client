@@ -1,4 +1,11 @@
 document.addEventListener('DOMContentLoaded', () => {
 	const messageElement = document.getElementById('message');
-	messageElement.textContent = 'Message changed';
+	fetch('http://127.0.0.1:3001/')
+		.then(response => response.json())
+		.then(data => {
+			messageElement.textContent = data.message;
+		})
+		.catch(error => {
+			messageElement.textContent = 'Error:' + error;
+		});
 });

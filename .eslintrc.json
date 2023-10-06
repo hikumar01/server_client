@@ -12,6 +12,10 @@
     "parserOptions": {
         "ecmaVersion": "latest"
     },
+    "ignorePatterns": [
+        "node_modules/",
+        "client/dist/main.js"
+    ],
     "rules": {
         "indent": [
             "error",
