@@ -8,7 +8,7 @@
   "scripts": {
     "setup": "npm install && concurrently \"npm install --prefix server\" \"npm install --prefix client\"",
     "dev": "concurrently \"npm run server\" \"npm run build\"",
-    "clean": "rm -rf node_modules server/node_modules client/node_modules client/build",
+    "clean": "rm -rf node_modules server/node_modules client/node_modules client/dist",
     "build": "npm run build --prefix client",
     "client": "npm start --prefix client",
     "server": "nodemon server/server.js --watch server"

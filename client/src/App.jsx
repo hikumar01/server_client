@@ -1,5 +1,5 @@
 import './App.css';
-import InputDiv from './component/InputDiv.js';
+import InputDiv from './component/InputDiv.jsx';
 import React from 'react';
 
 class App extends React.Component {
