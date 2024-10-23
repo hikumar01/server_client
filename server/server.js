@@ -6,7 +6,7 @@ import { fileURLToPath } from 'url';
 // const cors = require('cors');
 
 const PORT = process.env.PORT || 8080;
-const clientFolder = '../client/build';
+const clientFolder = '../client/dist';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const clientPath = path.join(__dirname, clientFolder);
