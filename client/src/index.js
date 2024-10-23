@@ -1,11 +1,11 @@
-document.addEventListener('DOMContentLoaded', () => {
-	const messageElement = document.getElementById('message');
-	fetch('http://127.0.0.1:3001/')
-		.then(response => response.json())
-		.then(data => {
-			messageElement.textContent = data.message;
-		})
-		.catch(error => {
-			messageElement.textContent = 'Error:' + error;
-		});
-});
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import './index.css';
+import App from './App';
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+	<React.StrictMode>
+		<App />
+	</React.StrictMode>
+);
