@@ -3,12 +3,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import DOMPurify from 'dompurify';
 
-InputDiv.propTypes = {
-	inputString: PropTypes.string.isRequired,
-	onDivClick: PropTypes.func.isRequired,
-	isDivEditable: PropTypes.bool.isRequired
-}
-
 class InputDiv extends React.Component {
 	constructor(props) {
 		super(props);
@@ -56,6 +50,12 @@ class InputDiv extends React.Component {
 			this.props.isDivEditable ? this.renderTextArea() : this.renderDiv()
 		);
 	}
+}
+
+InputDiv.propTypes = {
+	inputString: PropTypes.string.isRequired,
+	onDivClick: PropTypes.func.isRequired,
+	isDivEditable: PropTypes.bool.isRequired
 }
 
 export default InputDiv;
