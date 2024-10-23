@@ -12,7 +12,7 @@ class App extends React.Component {
 		};
 	}
 
-	handleCompareClick = (event) => {
+	handleCompareClick = () => {
 		if (this.state.isDivEditable) {
 			const input1Value = this.inputDiv1Ref.current.getValue();
 			const input2Value = this.inputDiv2Ref.current.getValue();
