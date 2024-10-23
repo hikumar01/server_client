@@ -2,7 +2,7 @@ import express from 'express';
 import session from 'express-session';
 import path from 'path';
 import { fileURLToPath } from 'url';
-
+import rateLimit from 'express-rate-limit';
 // const cors = require('cors');
 
 const PORT = process.env.PORT || 8080;
@@ -13,6 +13,13 @@ const clientPath = path.join(__dirname, clientFolder);
 const clientIndex = path.join(clientPath, 'index.html');
 
 const app = express();
+
+
+// set up rate limiter: maximum of 100 requests per 15 minutes
+const limiter = rateLimit({
+    windowMs: 15 * 60 * 1000, // 15 minutes
+    max: 100, // max 100 requests per windowMs
+});
 
 app.use(express.json());
 
@@ -72,7 +79,7 @@ app.get('/logout', (req, res) => {
 
 app.use(express.static(clientPath));
 
-app.get('*', (req, res) => {
+app.get('*', limiter, (req, res) => {
 	res.sendFile(clientIndex);
 });
 
