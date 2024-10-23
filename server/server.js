@@ -28,7 +28,7 @@ app.use(session({
 	resave: false,
 	saveUninitialized: true,
 	cookie: {
-		secure: false, // Set to true if using HTTPS
+		secure: process.env.NODE_ENV === 'production', // Set to true if in production
 		httpOnly: true, // Ensures the cookie is accessible only by the web server
 		sameSite: 'strict', // Protects against CSRF attacks by not sending the cookie with cross-site requests
 		maxAge: 60 * 1000 // 1 minute in milliseconds
